@@ -22,6 +22,43 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
+import VueProgressBar from 'vue-progressbar'
+
+Vue.use(VueProgressBar, {
+    color: 'rgb(6,249,126)',
+    failedColor: 'red',
+    height: '5px'
+})
+
+import { Form, HasError, AlertError } from 'vform'
+
+Vue.component(HasError.name, HasError)
+Vue.component(AlertError.name, AlertError)
+window.Form = Form;
+
+
+
+import Swal from 'sweetalert2';
+window.Swal =  Swal ;
+
+
+const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+})
+
+window.Toast =  Toast ;
+
+
+window.Fire = new Vue();
+
 import Clothes from "./components/Clothes";
 import Command from "./components/Command";
 import Users from "./components/Users";

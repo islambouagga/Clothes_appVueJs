@@ -2,12 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd50d3ea-e37e-4658-b280-f0c3f3308d0e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/API/ClotheController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Clothe.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_05_192519_create_clothes_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/DSC_0073.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/DSC_0073.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/clothes_pics/1612556518.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/clothes_pics/1612558686.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/clothes_pics/1612558992.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/clothes_pics/1612559048.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/clothes_pics/1612563655.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Clothes_appVueJs.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Clothes_appVueJs.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/Clothes.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Clothes.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,6 +153,7 @@
       <path value="$PROJECT_DIR$/vendor/facade/ignition" />
       <path value="$PROJECT_DIR$/vendor/facade/ignition-contracts" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/vendor/intervention/image" />
     </include_path>
   </component>
   <component name="ProjectId" id="1o3jccfwCphuSWW6RL9itAKJQFo" />
@@ -144,19 +165,20 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/components" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/img" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\Clothes_appVueJs\resources\js\components" />
       <recent name="C:\xampp\htdocs\Clothes_appVueJs\public\img" />
+      <recent name="C:\xampp\htdocs\Clothes_appVueJs\resources\js\components" />
     </key>
   </component>
   <component name="RunManager" selected="npm.watch">
@@ -188,11 +210,15 @@
       <option name="presentableId" value="Default" />
       <updated>1612522255124</updated>
       <workItem from="1612522260902" duration="2442000" />
-      <workItem from="1612530523797" duration="5270000" />
+      <workItem from="1612530523797" duration="5397000" />
+      <workItem from="1612549154361" duration="12545000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
