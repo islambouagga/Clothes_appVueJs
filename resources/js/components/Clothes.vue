@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row justify-content-center mt-5">
 
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addNew">
+        <button type="button" class="btn  btn-outline-success" data-toggle="modal" data-target="#addNew">
             Add new Clothes Type
         </button>
         </div>
@@ -10,14 +10,16 @@
 
             <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch" v-for="clothe in clothes"  :key="clothe.id">
                 <div class="card" style="width: 18rem;">
-
-                    <img class="card-img-top" :src="clothePic(clothe)" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">{{clothe.title}}</h5>
+                    <button type="button" @click="deleteClothe(clothe.id)" class="btn btn-outline-danger" >
+                        <i class="fas fa-trash"></i>
+                    </button>
+                    <img class="card-img-top" width="200" height="200" :src="clothePic(clothe)" alt="Card image cap">
+                    <div class="card-body  d-flex justify-content-center">
+                        <p class="card-title "><strong>  {{clothe.title}}</strong> </p>
                     </div>
-                    <div class="card-body">
-                        <a href="#" class="btn btn-primary ">Go somewhere</a>
-                    </div>
+                    <button type="button" class="btn btn-outline-primary" >
+                       Do command
+                    </button>
                 </div>
             </div>
             </div>
@@ -76,16 +78,55 @@
             },
             createClothe(){
                 this.$Progress.start()
-                Fire.$emit('AfterCreate');
-                this.clothe.post('api/clothe');
-                Toast.fire({
-                    icon: 'success',
-                    title: 'Signed in successfully'
+
+                this.clothe.post('api/clothe')
+                .then(()=>{
+                    Fire.$emit('AfterCreate');
+                    $('#addNew').modal('hide')
+                    Toast.fire({
+                        icon: 'success',
+                        title: 'Signed in successfully'
+                    })
+                    this.$Progress.finish()
+                })
+                .catch(()=>{
+                    Toast.fire({
+                        icon: 'error',
+                        title: 'Please entre Title   '
+                    })
+                    this.$Progress.fail()
                 })
 
-                $('#addNew').modal('hide')
 
-                this.$Progress.finish()
+
+
+            },
+            deleteClothe(clotheid){
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+
+                    if (result.value){
+                        this.clothe.delete('api/clothe/'+clotheid).then(()=>{
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            )
+                            Fire.$emit('AfterCreate');
+                        }).catch(()=>{
+                            Swal("Failed!", "There was  something wronge", "warning")
+                        }) 
+                    }
+
+
+                })
             },
             uplodepic(e){
                 let file =  e.target.files[0];

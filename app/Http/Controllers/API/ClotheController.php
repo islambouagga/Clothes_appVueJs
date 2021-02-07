@@ -72,6 +72,7 @@ class ClotheController extends Controller
      */
     public function destroy($id)
     {
-        //
+       $clothe  =  Clothe::findOrfail($id);
+       $clothe->delete();
     }
 }
