@@ -9,13 +9,23 @@ use Illuminate\Http\Request;
 class ClotheController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth:api');
+    }
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return  Clothe::all();
+//        dd(Clothe::active());
+        return  Clothe::paginate();
     }
 
     /**
@@ -73,6 +83,13 @@ class ClotheController extends Controller
     public function destroy($id)
     {
        $clothe  =  Clothe::findOrfail($id);
+
+ foreach ($clothe->commands as $command){
+    $command->clothe()->dissociate();
+    $command->clothe_id =  null;
+    $command->save();
+ }
+
        $clothe->delete();
     }
 }

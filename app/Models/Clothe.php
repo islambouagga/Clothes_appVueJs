@@ -19,4 +19,10 @@ class Clothe extends Model
         'title',
         'photo',
     ];
+
+
+    public function commands(){
+        return $this->hasMany(Command::class);
+    }
+
 }
