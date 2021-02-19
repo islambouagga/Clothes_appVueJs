@@ -25,3 +25,6 @@ Route::apiResources([
     'clothe' => ClotheController::class,
     'command' => CommandController::class,
 ]);
+
+
+Route::get('findCommand',[CommandController::class,'search']);

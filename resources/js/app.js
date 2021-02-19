@@ -71,7 +71,7 @@ let routes = [
     { path: '/Users', component: Users },
     { path: '/Charts', component: Charts },
 ]
-
+Vue.component('pagination', require('laravel-vue-pagination'));
 
 const router = new VueRouter({
     mode: 'history',
